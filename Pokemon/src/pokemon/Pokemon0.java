@@ -37,7 +37,7 @@ public class Pokemon0 {
 		return this.atk;
 	}
 	
-	public boolean isKo() {
+	public boolean isKO() {
 		
 		if( this.hp == 0) {
 			return true;
@@ -49,6 +49,38 @@ public class Pokemon0 {
 		this.hp = this.getNiveau() * 2;
 	}
 	
+	public void attaquer(Pokemon0 p) {
+		
+		p.hp -= this.getAtk();
+		
+	}
 	
+	public String toString() {
+		String msg = " Je m'appelle "+this.getNom()+" !\n je suis de niveau "+this.getNiveau()+" \n j'ai "+this.getHp()+" points de vie \n mon attaque de base est de "+this.getAtk();
+		return msg;
+	}
+	
+	private String prefixe() {
+		String msg = "[Pokemon "+this.getNom()+ "] : ";
+		return msg;
+	}
+	public void log(String msg) {
+		System.out.println(this.prefixe() + msg);
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		Pokemon0 p1 = new Pokemon0("Carapuce");
+		Pokemon0 p2 = new Pokemon0("Salamèche");
+		
+		p1.log(p1.toString());
+		p2.log(p2.toString());
+		
+		p1.attaquer(p2);
+		p2.log(p2.toString());
+
+	
+	}
 
 }
