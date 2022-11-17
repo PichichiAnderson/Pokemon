@@ -5,6 +5,7 @@ public class Dresseur {
 	private String nom;
 	private int argent;
 	private int nbPokemon;
+	private SacADos sac;
 	
 	public Dresseur(String nom) {
 		this.nom = nom;

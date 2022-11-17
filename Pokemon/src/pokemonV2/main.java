@@ -20,6 +20,8 @@ public class main {
 		
 		p1.attaquer(p3);
 		p2.attaquer(p1);
+		
+		p2.attaquer(p3);
 	}
 
 }

@@ -13,12 +13,13 @@ public abstract class Pokemon {
 	protected int hp;
 	private int atk;
 	private TypePokemon type;
+	private static final int niveauMax = 10;
 	
 	public Pokemon(String nom, TypePokemon type) {
 		Random niveau = new Random();
 		
 		this.nom = nom;
-		this.niveau = niveau.nextInt(1, 11);
+		this.niveau = niveau.nextInt(1, niveauMax + 1);
 		this.hp = this.niveau * 2;
 		this.atk = (this.niveau / 2) + 1;
 		this.type = type;
