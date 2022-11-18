@@ -1,5 +1,7 @@
 package pokemonV2.dresseur;
 
+import pokemonV2.Pokemon;
+
 public class Dresseur {
 
 	private String nom;
@@ -16,8 +18,26 @@ public class Dresseur {
 		return this.nom;
 	}
 	
-	public int getNbPokemon() {
+	public int getNbPokemons() {
 		return this.nbPokemon;
+	}
+	
+	public void prendreArgent(Dresseur dresseur) {
+		this.argent += 10;
+		dresseur.argent -= 10;
+	}
+	
+	public void pokeCenter() {
+		this.sac.pokeCenter();
+	}
+	
+	public boolean peutCombattre() {
+		 return (this.argent > 0 && this.sac.peutCombattre());
+		
+	}
+	
+	public Pokemon getNextPokemon() {
+		return this.sac.getNextPokemon();
 	}
 	
 	
